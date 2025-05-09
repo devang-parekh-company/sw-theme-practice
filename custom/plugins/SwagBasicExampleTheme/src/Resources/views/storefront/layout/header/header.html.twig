@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+{% block layout_header %}
+	{% block layout_header_navigation %}
+		{% block layout_header_actions %}
+			<div class="d-flex justify-content-end">
+				<a href="{{ theme_config('redirect-url') }}">
+					<button class="btn btn-primary">My Custom Link</button>
+				</a>
+			</div>
+		{% endblock %}
+	{% endblock %}
+{% endblock %}
