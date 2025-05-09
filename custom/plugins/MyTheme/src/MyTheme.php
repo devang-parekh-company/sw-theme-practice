@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace SwagBasicExampleTheme;
+namespace MyTheme;
 
 use Shopware\Core\Framework\Plugin;
 use Shopware\Storefront\Framework\ThemeInterface;
 
-class SwagBasicExampleTheme extends Plugin implements ThemeInterface
+class MyTheme extends Plugin implements ThemeInterface
 {
 }

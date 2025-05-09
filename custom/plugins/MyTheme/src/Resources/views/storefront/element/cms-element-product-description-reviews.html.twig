@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-product-description-reviews.html.twig' %}
+
+{% set short_description = element.data.product.customFields.product_custom_field_short_description %}
+{% set shortDescriptionTabId = "short-description-tab-" ~ product.id %}
+{% set shortDescriptionTabHref = "#short-description-tab-" ~ product.id ~ "-pane" %}
+{% set shortDescriptionTabContent = "short-description-tab-" ~ product.id ~ "-pane" %}
+
+{% block element_product_description_reviews_tabs_navigation_review %}
+	{{ parent() }}
+	{% if short_description %}
+		<li class="nav-item">
+			<a class="nav-link product-detail-tab-navigation-link short-description-tab" id="{{ shortDescriptionTabId }}" data-bs-toggle="tab" data-off-canvas-tabs="true" href="{{ shortDescriptionTabHref }}" role="tab" aria-controls="{{ shortDescriptionTabContent }}" aria-selected="true">
+				{{ 'product.short_description'|trans }}
+				<span class="product-detail-tab-navigation-icon">
+					{% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+				</span>
+			</a>
+		</li>
+	{% endif %}
+{% endblock %}
+{% block element_product_description_reviews_tabs_content_review %}
+	{{ parent() }}
+	{% if short_description %}
+		<div class="tab-pane fade show" id="{{ shortDescriptionTabContent }}" role="tabpanel" aria-labelledby="{{ shortDescriptionTabId }}">
+			{{ short_description|raw }}
+		</div>
+	{% endif %}
+{% endblock %}

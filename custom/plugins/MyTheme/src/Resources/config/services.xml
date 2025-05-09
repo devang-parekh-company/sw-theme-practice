@@ -5,11 +5,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="SwagBasicExampleTheme\Controller\StoreFront\SwagBasicExampleThemeController" public="true">
-            <call method="setContainer">
-                <argument type="service" id="service_container" />
-            </call>
+        <service id="Swag\Example\Service\SwagService" public="true" >
+            <argument type="service" id="translator" />
         </service>
-
     </services>
 </container>
