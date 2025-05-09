@@ -1,6 +1,6 @@
 {
-  "name": "swag/theme-skeleton",
-  "description": "Theme skeleton plugin",
+  "name": "swag/theme-basic",
+  "description": "Basic theme plugin for Shopware 6",
   "type": "shopware-platform-plugin",
   "license": "MIT",
   "autoload": {
@@ -13,6 +13,18 @@
     "label": {
       "de-DE": "Theme SwagBasicExampleTheme plugin",
       "en-GB": "Theme SwagBasicExampleTheme plugin"
+    },
+    "description": {
+      "de-DE": "Theme Skeleton Plugin Beschreibung",
+      "en-GB": "Theme Skeleton Plugin Description"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.icreativetechnologies.com",
+      "en-GB": "https://www.icreativetechnologies.com"
+    },
+    "supportLink": {
+      "de-DE": "https://www.support.icreativetechnologies.com/",
+      "en-GB": "https://www.support.icreativetechnologies.com/"
     }
   }
 }
