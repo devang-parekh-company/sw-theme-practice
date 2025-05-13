@@ -1,0 +1,104 @@
+{
+  "sw-cms": {
+      "elements": {
+          "general": {
+              "config": {
+                  "caption": {
+                      "mediaUpload": "Upload an image"
+                  },
+                  "label": {
+                      "verticalAlign": "Vertical align",
+                      "alignment": "Alignment",
+                      "verticalAlignTop": "Top",
+                      "verticalAlignCenter": "Center",
+                      "verticalAlignBottom": "Bottom",
+                      "displayMode": "Display mode",
+                      "displayModeStandard": "Original",
+                      "displayModeCover": "Cropped",
+                      "displayModeStretch": "Scaled",
+                      "displayModeContain": "Fixed height",
+                      "autoSlide": "Automatic transition",
+                      "autoplayTimeout": "Delay",
+                      "speed": "Animation duration",
+                      "horizontalAlign": "Horizontal align",
+                      "horizontalAlignLeft": "Left",
+                      "horizontalAlignCenter": "Center",
+                      "horizontalAlignRight": "Right"
+                  },
+                  "helpText": {
+                      "autoSlide": "Temporarily disabled due to lack of accessibility.",
+                      "autoplayTimeout": "The millisecond duration for how long the slide should stay still.",
+                      "speed": "The millisecond duration of the sliding animation.",
+                      "displayMode": "<strong>Original:</strong> The image is displayed in its original resolution or shrunk down to current CMS page's width.<br><br><strong>Scaled:</strong> The image is scaled to the CMS page's width without any height restrictions.<br><br><strong>Cropped:</strong> The image is scaled to the current CMS page's width. Any vertical overflow is cropped to the configured maximum height."
+                  },
+                  "tab": {
+                      "content": "Content",
+                      "settings": "Settings",
+                      "options": "Options"
+                  },
+                  "infoText": {
+                      "listingElement": "This element's product data is automatically loaded by the category associated with this layout. The content just shows a sample preview."
+                  }
+              },
+              "switch": {
+                  "groups": {
+                      "all": "All elements",
+                      "favorites": "Favourite elements"
+                  }
+              }
+          },
+
+          "buyButton": {
+              "label": "Buy box",
+              "infoText": {
+                  "tooltipSettingDisabled": "This element's product data is automatically loaded by the product associated with this layout. The content just shows a sample preview."
+              },
+              "config": {
+                  "label": {
+                      "buttonText": "Button Text",
+                      "redirectLink": "Redirect Link"
+                  },
+                  "placeholder": {
+                      "buttonText": "Enter Button Text ...",
+                      "redirectLink": "/#"
+                  }
+              },
+              "component": {
+                  "label": {
+                      "actionBuy": "Add to cart",
+                      "taxInfo": "Prices incl. VAT plus shipping costs",
+                      "deliveryShippingFree": "Free shipping",
+                      "deliveryTime": "Available, delivery time {name}",
+                      "variants": "Variants",
+                      "productNumber": "Product number:"
+                  }
+              }
+          }
+      },
+      "blocks": {
+          "textImage": {
+              "centerText": {
+                  "label": "Three columns, boxed images & text"
+              },
+              "imageText": {
+                  "label": "Two columns, boxed image & text"
+              },
+              "imageTextBubble": {
+                  "label": "Three columns, captioned & rounded"
+              },
+              "imageTextCover": {
+                  "label": "Two columns, full-sized image & text"
+              },
+              "imageTextGallery": {
+                  "label": "Three columns, image/text cards"
+              },
+              "imageTextRow": {
+                  "label": "Three columns, captioned images"
+              },
+              "textOnImage": {
+                  "label": "Hero image"
+              }
+          }
+      }
+  }
+}

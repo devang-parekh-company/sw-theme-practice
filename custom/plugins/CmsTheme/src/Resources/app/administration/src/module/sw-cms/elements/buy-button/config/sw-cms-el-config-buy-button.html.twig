@@ -1,0 +1,10 @@
+{% block sw_cms_element_buy_button_config %}
+	<div class="sw-cms-el-config-buy-button">
+		{% block sw_cms_element_buy_button_config_product_select %}
+			<sw-text-field v-model:value="buttonText" :label="$tc('sw-cms.elements.buyButton.config.label.buttonText')" :placeholder="$tc('sw-cms.elements.buyButton.config.placeholder.buttonText')" name="buttonText" validation="required" required @change="onButtonTextChange"/>
+
+			<sw-text-field v-model:value="redirectLink" :label="$tc('sw-cms.elements.buyButton.config.label.redirectLink')" :placeholder="$tc('sw-cms.elements.buyButton.config.placeholder.redirectLink')" name="redirectLink" validation="required" required @change="onRedirectLinkChange"/>
+
+		{% endblock %}
+	</div>
+{% endblock %}

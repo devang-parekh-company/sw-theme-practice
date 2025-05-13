@@ -1,0 +1,39 @@
+{
+  "name": "cms-plugin/cms-plugin",
+  "description": "This is my first plugin used for CMS block creation.",
+  "type": "shopware-platform-plugin", 
+  "version": "1.0.0",
+  "license": "MIT",
+  "require": {
+    "shopware/core": "~6.6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "CmsTheme\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CmsTheme\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "CmsTheme\\CmsTheme",
+    "label": {
+      "de-DE": "Theme CmsTheme plugin",
+      "en-GB": "Theme CmsTheme plugin"
+    },
+    "description": {
+      "de-DE": "Theme Skeleton Plugin Beschreibung",
+      "en-GB": "Theme Skeleton Plugin Description"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.icreativetechnologies.com",
+      "en-GB": "https://www.icreativetechnologies.com"
+    },
+    "supportLink": {
+      "de-DE": "https://www.support.icreativetechnologies.com/",
+      "en-GB": "https://www.support.icreativetechnologies.com/"
+    }
+  }
+}

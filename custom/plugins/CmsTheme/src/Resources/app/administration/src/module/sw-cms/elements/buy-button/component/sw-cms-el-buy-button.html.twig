@@ -1,0 +1,11 @@
+{% block sw_cms_el_buy_button %}
+	<div class="sw-cms-el-buy-button" :style="alignStyle">
+        {% block sw_cms_element_buy_button_form_action %}
+            <div class="sw-cms-el-buy-button__actions">
+                <a href="#" class="sw-cms-el-buy-button__buy-action">
+                    {{ $tc('sw-cms.elements.buyButton.component.label.actionBuy') }}
+                </a>
+            </div>
+        {% endblock %}
+	</div>
+{% endblock %}
