@@ -1,9 +1,9 @@
 {% block sw_cms_element_buy_button_config %}
 	<div class="sw-cms-el-config-buy-button">
 		{% block sw_cms_element_buy_button_config_product_select %}
-			<sw-text-field v-model:value="element.config.name.value" :label="$tc('sw-cms.elements.buyButton.config.label.buttonText')" :placeholder="$tc('sw-cms.elements.buyButton.config.placeholder.buttonText')" name="name" validation="required" required  @update:value="onButtonNameChange" />
+			<sw-text-field v-model:value="element.config.name.value" :label="$tc('sw-cms.elements.buyButton.config.label.buttonText')" :placeholder="$tc('sw-cms.elements.buyButton.config.placeholder.buttonText')" name="name" validation="required" required  @update:value="onChange" />
 
-			<sw-text-field v-model:value="element.config.link.value" :label="$tc('sw-cms.elements.buyButton.config.label.redirectLink')" :placeholder="$tc('sw-cms.elements.buyButton.config.placeholder.redirectLink')" name="link" validation="required" required @update:value="onLinkChange" />
+			<sw-text-field v-model:value="element.config.link.value" :label="$tc('sw-cms.elements.buyButton.config.label.redirectLink')" :placeholder="$tc('sw-cms.elements.buyButton.config.placeholder.redirectLink')" name="link" validation="required" required @update:value="onChange" />
 
 		{% endblock %}
 	</div>

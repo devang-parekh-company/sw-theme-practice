@@ -1,0 +1,33 @@
+{% block block_text_image_text %}
+    {% set columns = 3 %}
+
+    {% block block_left_text %}
+        {% set element = block.slots.getSlot('left-text') %}
+
+        <div class="col-md-4" data-cms-element-id="{{ element.id }}">
+            {% block block_text_left_inner %}
+                {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+
+    {% block block_center_image %}
+        {% set element = block.slots.getSlot('center-image') %}
+
+        <div class="col-md-4" data-cms-element-id="{{ element.id }}">
+            {% block block_center_image_center_inner %}
+                {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+
+    {% block block_right_text %}
+        {% set element = block.slots.getSlot('right-text') %}
+
+        <div class="col-md-4" data-cms-element-id="{{ element.id }}">
+            {% block block_text_right_inner %}
+                {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}

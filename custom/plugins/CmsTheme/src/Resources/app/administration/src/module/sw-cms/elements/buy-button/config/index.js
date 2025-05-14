@@ -21,11 +21,7 @@ Shopware.Component.register("sw-cms-el-config-buy-button", {
       this.initElementConfig("buy-button");
     },
 
-    onButtonNameChange() {
-      this.$emit("element-update", this.element);
-    },
-
-    onLinkChange() {
+    onChange() {
       this.$emit("element-update", this.element);
     },
   },

@@ -1,0 +1,34 @@
+{
+  "name": "Blog Theme",
+  "author": "iCreative Technologies",
+  "views": [
+    "@Storefront",
+    "@Plugins",
+    "@Blog"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/blog/blog.js"
+  ],
+  "asset": [
+    "@Storefront",
+    "app/storefront/src/assets"
+  ],
+  "config": {
+    "fields": {
+      "ctaUrl": {
+        "label": {
+          "en-GB": "CTA Button URL",
+          "de-DE": "CTA-Button-URL"
+        },
+        "type": "url",
+        "scss": false
+      }
+    }
+  }
+  }

@@ -1,0 +1,28 @@
+.sw-cms-block-image-four-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 40px;
+  align-items: start;
+  padding: 20px;
+
+
+  .sw-cms-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .sw-cms-el-image.is--cover {
+      width: 100%;
+      min-height: 200px;
+    }
+
+    .sw-cms-el-text {
+      padding-top: 10px;
+    }
+
+    .sw-cms-el-button {
+      margin-top: 10px;
+    }
+  }
+}

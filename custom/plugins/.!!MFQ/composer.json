@@ -1,0 +1,18 @@
+{
+  "name": "swag/theme-skeleton",
+  "description": "Blog Theme plugin",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Blog\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Blog\\Blog",
+    "label": {
+      "de-DE": "Theme Blog plugin",
+      "en-GB": "Theme Blog plugin"
+    }
+  }
+}
