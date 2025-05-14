@@ -15,31 +15,14 @@ Shopware.Service("cmsService").registerCmsElement({
   disabledConfigInfoTextKey:
     "sw-cms.elements.buyButton.infoText.tooltipSettingDisabled",
   defaultConfig: {
-    product: {
+    name: {
       source: "static",
-      value: null,
+      value: "Shop",
       required: true,
-      entity: {
-        name: "product",
-        criteria: new Shopware.Data.Criteria(1, 25).addAssociation(
-          "deliveryMedia"
-        ),
-      },
     },
-    alignment: {
+    link: {
       source: "static",
       value: null,
-    },
-  },
-  defaultData: {
-    product: {
-      name: "Lorem Ipsum dolor",
-      productNumber: "XXXXXX",
-      minPurchase: 1,
-      deliveryTime: {
-        name: "1-3 days",
-      },
-      price: [{ gross: 0.0 }],
     },
   },
   collect: Shopware.Service("cmsService").getCollectFunction(),

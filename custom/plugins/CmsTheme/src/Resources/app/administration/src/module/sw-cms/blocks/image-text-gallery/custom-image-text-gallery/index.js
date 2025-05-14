@@ -3,7 +3,7 @@ import "./component";
 
 Shopware.Service("cmsService").registerCmsBlock({
   name: "custom-image-text-gallery",
-  label: "Custom Image Text Gallery Block", 
+  label: "Custom Image Text Gallery Block",
   category: "text-image",
   component: "sw-cms-block-custom-image-text-gallery",
   previewComponent: "sw-cms-preview-custom-image-text-gallery",
@@ -50,34 +50,17 @@ Shopware.Service("cmsService").registerCmsBlock({
       type: "buy-button",
       default: {
         config: {
-          product: {
+          name: {
+            source: "static",
+            value: "Shop",
+            required: true,
+          },
+          link: {
             source: "static",
             value: null,
-            required: true,
-            entity: {
-              name: "product",
-              criteria: new Shopware.Data.Criteria(1, 25).addAssociation(
-                "deliveryMedia"
-              ),
-            },
           },
-          alignment: {
-            source: "static", 
-            value: null,
-          }
         },
-        data: {
-          product: {
-            name: "Lorem Ipsum dolor",
-            productNumber: "XXXXXX", 
-            minPurchase: 1,
-            deliveryTime: {
-              name: "1-3 days",
-            },
-            price: [{ gross: 0.0 }],
-          }
-        }
-      }
+      },
     },
     "center-image": {
       type: "image",
@@ -113,34 +96,17 @@ Shopware.Service("cmsService").registerCmsBlock({
       type: "buy-button",
       default: {
         config: {
-          product: {
+          name: {
+            source: "static",
+            value: "Shop",
+            required: true,
+          },
+          link: {
             source: "static",
             value: null,
-            required: true,
-            entity: {
-              name: "product",
-              criteria: new Shopware.Data.Criteria(1, 25).addAssociation(
-                "deliveryMedia"
-              ),
-            },
           },
-          alignment: {
-            source: "static", 
-            value: null,
-          }
         },
-        data: {
-          product: {
-            name: "Lorem Ipsum dolor",
-            productNumber: "XXXXXX", 
-            minPurchase: 1,
-            deliveryTime: {
-              name: "1-3 days",
-            },
-            price: [{ gross: 0.0 }],
-          }
-        }
-      }
+      },
     },
     "right-image": {
       type: "image",
@@ -176,34 +142,17 @@ Shopware.Service("cmsService").registerCmsBlock({
       type: "buy-button",
       default: {
         config: {
-          product: {
+          name: {
+            source: "static",
+            value: "Shop",
+            required: true,
+          },
+          link: {
             source: "static",
             value: null,
-            required: true,
-            entity: {
-              name: "product",
-              criteria: new Shopware.Data.Criteria(1, 25).addAssociation(
-                "deliveryMedia"
-              ),
-            },
           },
-          alignment: {
-            source: "static", 
-            value: null,
-          }
         },
-        data: {
-          product: {
-            name: "Lorem Ipsum dolor",
-            productNumber: "XXXXXX", 
-            minPurchase: 1,
-            deliveryTime: {
-              name: "1-3 days",
-            },
-            price: [{ gross: 0.0 }],
-          }
-        }
-      }
+      },
     },
     "bottom-right-image": {
       type: "image",
@@ -239,34 +188,17 @@ Shopware.Service("cmsService").registerCmsBlock({
       type: "buy-button",
       default: {
         config: {
-          product: {
+          name: {
+            source: "static",
+            value: "Shop",
+            required: true,
+          },
+          link: {
             source: "static",
             value: null,
-            required: true,
-            entity: {
-              name: "product",
-              criteria: new Shopware.Data.Criteria(1, 25).addAssociation(
-                "deliveryMedia"
-              ),
-            },
           },
-          alignment: {
-            source: "static", 
-            value: null,
-          }
         },
-        data: {
-          product: {
-            name: "Lorem Ipsum dolor",
-            productNumber: "XXXXXX", 
-            minPurchase: 1,
-            deliveryTime: {
-              name: "1-3 days",
-            },
-            price: [{ gross: 0.0 }],
-          }
-        }
-      }
+      },
     },
   },
 });
