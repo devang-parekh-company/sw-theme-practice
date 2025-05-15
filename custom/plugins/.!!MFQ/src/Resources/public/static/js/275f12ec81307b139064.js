@@ -1,1 +1,0 @@
-"use strict";(window.webpackJsonpPluginblog=window.webpackJsonpPluginblog||[]).push([[682],{682:function(n,t,e){e.r(t),e.d(t,{default:function(){return o}});var o={template:'<div>\n    <sw-button class="btn btn-outline-secondary">\n        Button\n    </sw-button>\n</div>',props:{element:{type:Object,required:!0}}}}}]);
