@@ -1,0 +1,14 @@
+{
+    "schoolRegistrationForm": {
+        "RegistrationForm": {
+            "Field":{
+                "name": "Projekt ID*",
+                "placeholder": "Mindestens 3 Zeichen eingeben",
+                "errorMessage": "Bitte wählen Sie einen gültigen Schulcode."
+            }
+        },
+        "BillingAddress" : "Rechnungsadresse",
+        "BillingAddressText" : "Bitte geben Sie hier die Daten des Vertragspartners bzw. Rechnungsempfängers an.",
+        "BillingAddressAttentionText" : "Achtung: Verwenden Sie hier nicht den Namen des Schülers."
+    }
+}

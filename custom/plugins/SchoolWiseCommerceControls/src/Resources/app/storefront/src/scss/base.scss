@@ -1,0 +1,42 @@
+.autocomplete-suggestions {
+  position: absolute;
+  top: 105px;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: white;
+  z-index: 1000;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  max-width: 25%;
+  @media(max-width: 576px){
+    max-width: 100%;
+  }
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover {
+  background-color: #f0f0f0;
+}
+
+//Cart Page CSS Added Here
+.line-item-quantity .quantity-selector-group {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 0px 8px;
+  align-items: center;
+}
+
+.no-code-message {
+  color: red;
+  font-size: 14px;
+  padding: 5px;
+  text-align: left;
+}

@@ -1,0 +1,34 @@
+{% sw_extends '@Storefront/storefront/component/line-item/element/remove.html.twig' %}
+
+{% block component_line_item_remove_form %}
+    {% set loaderOptions = {
+        skipLoadingIndicator: true
+    } %}
+
+    <form action="{{ formAction }}"
+          method="post"
+          data-form-submit-loader="true"
+          data-form-submit-loader-options="{{ loaderOptions|json_encode }}"
+          class="{% if displayMode === 'offcanvas' %}js-offcanvas-cart-remove-product{% endif %}">
+        {% block component_line_item_remove_redirect %}
+            <input type="hidden"
+                   name="redirectTo"
+                   value="{{ redirectTo }}">
+            <input type="hidden"
+                   name="redirectParameters"
+                   value="{{ redirectParameters }}">
+        {% endblock %}
+
+        {% block component_line_item_remove_button %}
+            {% if not lineItem.payload.isLicenseProduct %}
+            <button type="submit"
+                    aria-label="{{ 'checkout.removeLineItem'|trans({ '%lineItemLabel%': label })|striptags }}"
+                    title="{{ 'global.default.remove'|trans }}"
+                    data-product-id="{{ lineItem.id }}"
+                    class="btn btn-light btn-sm line-item-remove-button">
+                {% sw_icon 'x' style { size: 'sm' } %}
+            </button>
+            {% endif %}
+        {% endblock %}
+    </form>
+{% endblock %}

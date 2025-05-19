@@ -1,0 +1,35 @@
+{% sw_extends '@Storefront/storefront/component/line-item/element/quantity.html.twig' %}
+
+{% block component_line_item_quantity_select_input %}
+
+    <div class="input-group line-item-quantity-group quantity-selector-group" data-quantity-selector="true">
+            <label class="form-label visually-hidden">{{ 'component.product.quantitySelect.label'|trans|striptags }}</label>
+            <button
+                    type="button"
+                    class="btn btn-outline-light btn-minus js-btn-minus {% if lineItem.payload.isLicenseProduct %}d-none{% endif %}"
+                    {% if lineItem.payload.isLicenseProduct %}disabled="disabled"{% endif %}
+                    aria-label="{{ 'component.product.quantitySelect.decrease'|trans|striptags }}"
+            >
+                {% sw_icon 'minus' style {size: 'xs'} %}
+            </button>
+            <input
+                    type="number"
+                    name="quantity"
+                    class="form-control js-quantity-selector quantity-selector-group-input quantity-input-{{ lineItem.id }} {% if displayMode === 'offcanvas' %} js-offcanvas-cart-change-quantity-number{% endif %}"
+                    min="{{ quantityInformation.minPurchase }}"
+                    max="{{ maxQuantity }}"
+                    step="{{ quantityInformation.purchaseSteps }}"
+                    value="{{ lineItem.quantity }}"
+                    {% if lineItem.payload.isLicenseProduct %}readonly="readonly"{% endif %}
+                    aria-label="{{ 'component.product.quantitySelect.label'|trans|striptags }}"
+            />
+            <button
+                    type="button"
+                    class="btn btn-outline-light btn-plus js-btn-plus {% if lineItem.payload.isLicenseProduct %}d-none{% endif %}"
+                    {% if lineItem.payload.isLicenseProduct %}disabled="disabled"{% endif %}
+                    aria-label="{{ 'component.product.quantitySelect.increase'|trans|striptags }}"
+            >
+                {% sw_icon 'plus' style {size: 'xs'} %}
+            </button>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/page/account/order-history/order-item.html.twig' %}
+
+{% block page_account_order_item_context_menu_reorder_form_redirect %}
+    {{ parent() }}
+    <input type="hidden" name="repeatTo" value="repeat.order">
+{% endblock %}
+
+{% block page_account_order_item_context_menu_reorder_form_line_item_input %}
+    {{ parent() }}
+    {% if lineItem.type == PRODUCT_LINE_ITEM_TYPE and lineItem.payload['isLicenseProduct'] %}
+        <input type="hidden"
+               name="lineItems[{{ lineItem.identifier }}][isLicenseProduct]"
+               value="{{ lineItem.identifier }}">
+    {% endif %}
+{% endblock %}

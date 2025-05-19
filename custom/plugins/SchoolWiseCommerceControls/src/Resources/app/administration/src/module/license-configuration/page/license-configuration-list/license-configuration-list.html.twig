@@ -1,0 +1,71 @@
+{# src/Resources/app/administration/src/module/license-configuration/page/license-configuration-list/license-configuration-list.html.twig #}
+{% block license_configuration_list %}
+
+    <sw-page class="license-configuration-list">
+        {% block spp_product_list_smart_bar_header %}
+            <template #smart-bar-header>
+                {% block license_configuration_list_smart_bar_header_title %}
+                    <h2>
+                        {% block license_configuration_list_smart_bar_header_text %}
+                            {{ $tc('license-configuration.general.title') }}
+                        {% endblock %}
+                        {% block license_configuration_list_smart_bar_header_amount %}
+                            <span
+                                    v-if="!isLoading"
+                                    class="sw-page__smart-bar-amount"
+                            >
+                    ({{ total }})
+                </span>
+                        {% endblock %}
+                    </h2>
+                {% endblock %}
+            </template>
+        {% endblock %}
+        {% block license_configuration_list_actions %}
+            <template #smart-bar-actions>
+                {% block license_configuration_list_smart_bar_actions %}
+                    <sw-button
+                            variant="primary"
+                            :router-link="{ name: 'license.configuration.create' }"
+                    >
+                        {{ $tc('Add New') }}
+                    </sw-button>
+                {% endblock %}
+            </template>
+        {% endblock %}
+        <template #content>
+            {% block spp_product_list_content %}
+                <div class="spp-product-list__content">
+                    {% block spp_product_list_grid %}
+                        <sw-entity-listing
+                                v-if="licenses"
+                                :items="licenses"
+                                :columns="columns"
+                                :repository="repository"
+                                :show-selection="false"
+                                :allow-edit="true"
+                                :isLoading="isLoading"
+                                @update-records="updateTotal"
+                                detailRoute="license.configuration.detail" />
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
+            {% block spp_product_list_empty_state %}
+                <sw-empty-state
+                        v-if="!isLoading && !total"
+                        icon="regular-file-text"
+                        :title="$tc('license-configuration.general.empty')"
+                >
+                    <template #icon>
+                        <img
+                                :src="assetFilter('/administration/static/img/empty-states/products-empty-state.svg')"
+                                :alt="$tc('license-configuration.general.empty')"
+                        >
+                    </template>
+                </sw-empty-state>
+            {% endblock %}
+        </template>
+
+    </sw-page>
+{% endblock %}

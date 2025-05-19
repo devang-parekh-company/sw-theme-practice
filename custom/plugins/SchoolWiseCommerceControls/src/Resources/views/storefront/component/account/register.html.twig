@@ -1,0 +1,37 @@
+{% sw_extends '@Storefront/storefront/component/account/register.html.twig' %}
+
+{% block component_account_register_personal_fields %}
+    <div class="form-group col-md-3 col-sm-6">
+        <label for="schoolCode" class="form-label">
+            {{ 'schoolRegistrationForm.RegistrationForm.Field.name'|trans }}
+        </label>
+        <input type="text"
+               name="schoolCode"
+               id="schoolCode"
+               class="form-control"
+               placeholder="{{ 'schoolRegistrationForm.RegistrationForm.Field.placeholder'|trans }}"
+               autocomplete="off"
+               data-error-message="{{ 'schoolRegistrationForm.RegistrationForm.Field.errorMessage'|trans }}"
+               data-base-url="{{ app.request.schemeAndHttpHost ~ app.request.basePath }}"
+               data-school-code-autocomplete
+               data-form-validation="true"
+                {% if app.session.get('schoolKey') %}
+                    value="{{ app.session.get('schoolKey') }}"
+                    disabled
+                {% endif %}
+        />
+
+        <div class="autocomplete-suggestions"></div>
+    </div>
+
+
+    <legend class="card-title">
+        {{ 'schoolRegistrationForm.BillingAddress'|trans|sw_sanitize }}
+    </legend>
+    <span class="mb-5">{{ 'schoolRegistrationForm.BillingAddressText'|trans|sw_sanitize }}</span>
+    <div class="mb-3">
+        <span class="fw-bold">{{ 'schoolRegistrationForm.BillingAddressAttentionText'|trans|sw_sanitize }}</span>
+    </div>
+
+    {{ parent() }}
+{% endblock %}

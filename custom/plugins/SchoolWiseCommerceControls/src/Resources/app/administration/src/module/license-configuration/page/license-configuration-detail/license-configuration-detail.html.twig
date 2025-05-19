@@ -1,0 +1,81 @@
+{% block license_configuration_detail %}
+    <sw-page class="license-configuration-detail">
+        {% block license_configuration_detail_actions %}
+            <template #smart-bar-actions>
+                {% block license_configuration_detail_actions_abort %}
+                    <sw-button :routerLink="{ name: 'license.configuration.list'}">
+                        {{ $t('Cancel') }}
+                    </sw-button>
+                {% endblock %}
+
+                {% block license_configuration_detail_actions_save %}
+                    <sw-button-process
+                            :isLoading="isLoading"
+                            :disabled="isLoading"
+                            :processSuccess="processSuccess"
+                            @process-finish="saveFinish"
+                            variant="primary"
+                            @click="onClickSave"
+                    >
+                        {{ $t('Save') }}
+                    </sw-button-process>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        <template #content>
+            <sw-card-view>
+                <sw-card
+                        v-if="licenses"
+                        position-identifier="license-configuration-detail">
+                    <sw-container
+                            columns="2fr 1fr"
+                            gap="40px"
+                    >
+                        <div class="license-configuration-detail-customer-group">
+                            {% block license_configuration_detail_customer_group %}
+                                <sw-entity-single-select
+                                        v-model:value="licenses.customerGroupId"
+                                        :label="$t('Customer Group')"
+                                        :placeholder="$t('Select Customer Group')"
+                                        entity="customer_group"
+                                        show-clearable-button
+                                        required
+                                >
+                                </sw-entity-single-select>
+                            {% endblock %}
+                        </div>
+                        <div class="license-configuration-detail-category">
+                            {% block license_configuration_detail_category %}
+                                <sw-entity-single-select
+                                        v-model:value="licenses.categoryId"
+                                        :label="$tc('Category')"
+                                        :placeholder="$t('Select Category')"
+                                        :criteria="activeCriteria"
+                                        entity="category"
+                                        show-clearable-button
+                                        required
+                                >
+                                </sw-entity-single-select>
+                            {% endblock %}
+                        </div>
+                        <div class="license-configuration-detail-product">
+                            {% block license_configuration_detail_product %}
+                                <sw-entity-single-select
+                                        v-model:value="licenses.productId"
+                                        :label="$tc('Product')"
+                                        :placeholder="$t('Select Product')"
+                                        :criteria="activeCriteria"
+                                        entity="product"
+                                        show-clearable-button
+                                        required
+                                >
+                                </sw-entity-single-select>
+                            {% endblock %}
+                        </div>
+                    </sw-container>
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

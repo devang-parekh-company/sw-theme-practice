@@ -1,0 +1,30 @@
+{
+  "name": "zenit-platform-gravitychild/zenit-platform-gravitychild",
+  "description": "This theme is child theme of zenit-platform-gravitychild theme",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "ZenitPlatformGravityChild\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "ZenitPlatformGravityChild\\ZenitPlatformGravityChild",
+    "label": {
+      "de-DE": "Theme ZenitPlatformGravity Child plugin",
+      "en-GB": "Theme ZenitPlatformGravity Child plugin"
+    },
+    "description": {
+      "de-DE": "Theme Skeleton Plugin Beschreibung",
+      "en-GB": "Theme Skeleton Plugin Description"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.icreativetechnologies.com",
+      "en-GB": "https://www.icreativetechnologies.com"
+    },
+    "supportLink": {
+      "de-DE": "https://www.support.icreativetechnologies.com/",
+      "en-GB": "https://www.support.icreativetechnologies.com/"
+    }
+  }
+}

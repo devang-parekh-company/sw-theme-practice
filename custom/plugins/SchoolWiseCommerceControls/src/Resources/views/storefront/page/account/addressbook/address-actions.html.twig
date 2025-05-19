@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/page/account/addressbook/address-actions.html.twig' %}
+
+{% block page_account_address_actions_set_default_shipping %}
+    {% if page.getExtensions['shippingEnabled'][0] %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

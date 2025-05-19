@@ -1,0 +1,15 @@
+{
+  "license-configuration": {
+    "general": {
+      "mainMenuItemGeneral": "License Configuration",
+      "descriptionTextModule": "Manage your licenses here",
+      "title": "License Configuration",
+      "empty": "No License Configuration Found"
+    },
+    "label": {
+      "customerGroup": "Customer Group",
+      "category": "Category",
+      "product": "Product(Licence-Product)"
+    }
+  }
+}

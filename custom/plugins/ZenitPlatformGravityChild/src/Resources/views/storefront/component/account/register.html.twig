@@ -1,0 +1,66 @@
+{% sw_extends '@Storefront/storefront/component/account/register.html.twig' %}
+{% block component_account_register %}
+	<div class="card register-card">
+		<div class="card-body">
+			{% block component_account_register_header %}
+				{{ parent() }}
+			{% endblock %}
+
+			{% block component_account_register_form %}
+				<form action="{{ path('frontend.account.register.save') }}" class="register-form" method="post" {# @deprecated tag:v6.7.0 - Form validation plugin is replaced by form handler plugin. #} {% if feature('ACCESSIBILITY_TWEAKS') %} data-form-handler="true" {% endif %} {% if not feature('ACCESSIBILITY_TWEAKS') %} data-form-submit-loader="true" {% endif %} {% if not feature('ACCESSIBILITY_TWEAKS') %} data-form-validation="true" {% endif %}>
+					{% block component_account_register_redirect %}
+						{{ parent() }}
+
+					{% endblock %}
+
+					{% block component_account_register_create_account %}
+						{{ parent() }}
+
+					{% endblock %}
+
+					{% block component_account_register_form_action %}
+						{{ parent() }}
+
+					{% endblock %}
+
+					{% block component_account_register_personal %}
+						{{ parent() }}
+						{% block component_account_register_customer_group %}
+							<div class="customer-group-search">
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="customerGroup">Customer Group*</label>
+									<input data-customer-group-plugin data-base-url="{{ app.request.schemeAndHttpHost ~ app.request.basePath }}" type="text" class="form-control" autocomplete="section-personal customer-group" id="customerGroup" placeholder="Enter customer group ..." name="customer_group" value="" required="required">
+									<div class="customer-group-results" data-customer-group-results="true"></div>
+								</div>
+							</div>
+							{% set examplePluginOptions = {
+                                text: "Are you not interested in this product?"
+                            } %}
+
+						</template>
+					{% endblock %}
+				{% endblock %}
+
+				{% block component_account_register_address %}
+					{{ parent() }}
+				{% endblock %}
+
+				{% block component_account_register_captcha %}
+					{{ parent() }}
+				{% endblock %}
+
+				{% block component_account_register_privacy %}
+					{{ parent() }}
+				{% endblock %}
+
+				{% block component_account_register_required_fields %}
+					{{ parent() }}
+				{% endblock %}
+
+				{% block component_account_register_submit %}
+					{{ parent() }}
+				{% endblock %}
+			</form>
+		{% endblock %}
+	</div>
+</div>{% endblock %}

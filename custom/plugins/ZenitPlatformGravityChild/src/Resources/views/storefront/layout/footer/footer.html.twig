@@ -1,0 +1,45 @@
+{% sw_extends '@zenit\PlatformGravity/storefront/layout/footer/footer.html.twig' %}
+{% block layout_footer_navigation_columns %}
+	{{ parent() }}
+	{% if theme_config('zen-footer-hotline-position') is same as ('column') %}
+		<div
+			class="{{ theme_config('zen-footer-hotline-col') }} {{ theme_config('zen-footer-hotline-col-xl') }} order-{{ theme_config('child-zen-custom-footer-hotline-order') }} footer-column js-footer-column footer-hotline-column">
+			{# footer logo #}
+			{% if theme_config('zen-footer-logo-position') is same as ('hotline') %}
+				{% set hotlineHiddenClass = 'd-md-none' %}
+			{% endif %}
+
+			{% block zen_layout_footer_navigation_hotline_headline_logo %}
+				{{ parent() }}
+			{% endblock %}
+
+			{# showClass #}
+			{% if theme_config('zen-footer-hotline-collapse-state') %}
+				{% set hotlineShowClass = 'show' %}
+			{% endif %}
+
+			{% block child_zen_layout_footer_navigation_hotline_headline %}
+				<div class="{{ hotlineHiddenClass }} footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger {{ hotlineShowClass }}" id="collapseFooterHotlineTitle" data-bs-target="#collapseFooterHotline" aria-expanded="true" aria-controls="collapseFooterHotline" role="listitem">
+					{{ 'Icreative Technologies'|trans|sw_sanitize }}
+
+					{% block zen_layout_footer_navigation_hotline_icons %}
+						{{ parent() }}
+					{% endblock %}
+				</div>
+			{% endblock %}
+
+			{% block child_zen_layout_footer_navigation_hotline_content %}
+				<div id="collapseFooterHotline" class="footer-column-content collapse js-footer-column-content {{ hotlineShowClass }}" aria-labelledby="collapseFooterHotlineTitle" role="listitem">
+					<div class="footer-column-content-inner">
+						<p class="footer-contact-hotline">
+							{{ 'footer.serviceHotline'|trans|sw_sanitize }}
+						</p>
+						<div class="footer-contact-form">
+							{{ 'visit our <a href"%url%">website </a>'|trans({'%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })})|raw }}
+						</div>
+					</div>
+				</div>
+			{% endblock %}
+		</div>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{
+    "name": "school-wise-commerce-controls/school-wise-commerce-controls",
+    "description": "school-wise-commerce-controls/school-wise-commerce-controls",
+    "type": "shopware-platform-plugin",
+    "version": "1.6.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "SchoolWiseCommerceControls\\SchoolWiseCommerceControls",
+        "label": {
+            "de-DE": "SchoolWise Commerce Kontrollen",
+            "en-GB": "SchoolWise Commerce Controls"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SchoolWiseCommerceControls\\": "src/"
+        }
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.12"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
